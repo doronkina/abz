@@ -1,0 +1,74 @@
+// colors
+$whiteColor: #fff; // bgColor
+$grayText: #696969;
+$tooltipBgColor: #303030;
+
+.container {
+    width: 23%;
+    margin-top: 62px;
+
+    text-align: center;
+
+    &:not(:nth-child(3n)) {
+        margin-right: 15.5%;
+    }
+
+    img {
+        margin-bottom: 20px;
+    }
+
+    h2 {
+        margin-bottom: 21px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    p {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        color: $grayText;
+
+        &:not(:last-child) {
+            margin-bottom: 12px;
+        }
+
+        &.email {
+            cursor: pointer;
+        }
+    }
+}
+
+@media (max-width: 1024px) {
+    .container {
+        width: 200px;
+
+        &:not(:nth-child(3n)) {
+            margin-right: calc(50% - 300px);
+        }
+    }
+}
+
+@media (max-width: 700px) {
+    .container {
+        width: 45%;
+
+        &:not(:nth-child(2n)) {
+            margin-right: 10%;
+        }
+
+        &:nth-child(2n) {
+            margin-right: 0;
+        }
+    }
+}
+
+@media (max-width: 414px) {
+    .container {
+        width: 100%;
+        margin-top: 40px;
+
+        &:nth-child(n) {
+            margin-right: 0;
+        }
+    }
+}

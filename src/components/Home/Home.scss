@@ -1,0 +1,285 @@
+// colors
+$primaryColor: #ef5b4c;
+$secondaryColor: #007bff;
+$whiteColor: #fff; // bgColor
+$bgColor2: #f9f9f3;
+$grayColor: #d8d8d8;
+$grayText: #696969;
+$btnHoverColor: #d34132;
+
+// container
+@mixin container($paddingY1, $paddingY2, $paddingY3) {
+    max-width: 1170px;
+    margin: 0 auto;
+    padding: $paddingY1 30px;
+
+    @media (max-width: 768px) {
+        padding: $paddingY2 30px;
+    }
+
+    @media (max-width: 414px) {
+        padding: $paddingY3 15px;
+    }
+}
+
+// buttons
+@mixin btn($maxWidth, $height, $bgColor, $color) {
+    width: 100%;
+    max-width: $maxWidth;
+    height: $height;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border-radius: 3px;
+    background-color: $bgColor;
+    color: $color;
+
+    a {
+        width: 100%;
+        height: 100%;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        border-radius: 3px;
+        color: $color;
+    }
+
+    @media (max-width: 414px) {
+        margin: 0 auto;
+    }
+}
+
+button {
+    @include btn(210px, 38px, $primaryColor, $whiteColor);
+
+    &:hover {
+        background-color: $btnHoverColor;
+    }
+
+    &[disabled] {
+        background-color: $grayColor;
+        color: $grayText;
+    }
+}
+
+button.flat {
+    @include btn(fit-content, fit-content, $whiteColor, $primaryColor);
+
+    &:hover a {
+        color: $btnHoverColor;
+    }
+}
+
+.subHeader { 
+    margin-top: 64px;
+    position: relative;
+
+    .bgContainer {
+        width: 100%;
+        height: 100%;
+
+        position: absolute;
+        top: 0;
+        z-index: -1;
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: left;
+        }
+    }
+
+    .container {
+        @include container(115px, 65px, 75px);
+        color: $whiteColor;
+
+        h1 {
+            max-width: 500px;
+            margin-bottom: 40px;
+            font-size: 44px;
+            text-transform: uppercase;
+        }
+
+        p {
+            max-width: 530px;
+            margin-bottom: 40px;
+
+            span {
+                font-size: inherit;
+            }
+        }
+    }
+}
+
+.info .container {
+    @include container(160px, 120px, 80px);
+
+    h1 {
+        margin-bottom: 68px;
+        text-align: center;
+    }
+
+    .row {
+        display: flex;
+
+        .imgContainer {
+            width: 37%;
+            margin: 0 50px 0 25px;
+
+            img {
+                width: 100%;
+            }
+        }
+
+        .content {
+            width: 57%;
+
+            h2 {
+                margin-bottom: 24px;
+            }
+
+            p {
+                margin-bottom: 34px;
+                text-align: justify;
+                color: $grayText;
+            }
+        }
+    }
+}
+
+.users {
+    background-color: $bgColor2;
+
+    .container {
+        @include container(160px, 120px, 80px);
+        text-align: center;
+
+        h1 {
+            margin-bottom: 29px;
+        }
+
+        .sub-header {
+            margin-bottom: calc(78px - 62px);
+            color: $grayText;
+        }
+
+        button {
+            margin: 0 auto;
+        }
+    }
+}
+
+.registration .container {
+    @include container(160px, 120px, 80px);
+
+    h1 {
+        margin-bottom: 20px;
+        text-align: center;
+    }
+
+    .sub-header {
+        max-width: 440px;
+        margin: 0 auto 36px;
+        text-align: center;
+        color: $grayText;
+    }
+}
+
+@media (max-width: 768px) {
+    .subHeader .container {
+        h1 {
+            max-width: 400px;
+            font-size: 35px;
+        }
+    
+        p {
+            max-width: 450px;
+        }
+    }
+
+    .info .container {
+        .row {
+            .imgContainer {
+                width: 35%;
+                margin: 0 30px 0 0;
+            }
+        }
+    }
+}
+
+@media (max-width: 414px) {
+    .subHeader {
+        margin-top: 44px;
+
+        .bgContainer {
+            img {
+                object-position: center;
+            }
+        }
+
+        .container {
+            text-align: center;
+
+            h1 {
+                max-width: 300px;
+                margin: 0 auto 30px;
+                font-size: 26px;
+            }
+    
+            p {
+                max-width: 330px;
+                margin-bottom: 25px;
+
+                span {
+                    display: none;
+                }
+            }
+        }
+    }
+
+    .info .container {
+        h1 {
+            margin-bottom: 32px;
+        }
+
+        .row {
+            flex-direction: column;
+
+            .imgContainer {
+                width: 88%;
+                margin: 0 auto 40px;
+            }
+
+            .content {
+                width: 100%;
+
+                h2 {
+                    text-align: center;
+                }
+            }
+        }
+    }
+
+    .users {
+        .container {
+            h1 {
+                margin-bottom: 19px;
+            }
+
+            .sub-header {
+                margin-bottom: 0;
+            }
+        }
+    }
+
+    .registration .container {
+        .sub-header {
+            max-width: 290px;
+        }
+    }
+}

@@ -1,0 +1,21 @@
+// colors
+$grayColor: #c8cdd2;
+
+.wrapper {
+    border-top: 1px solid $grayColor;
+
+    .container {
+        max-width: 1170px;
+        margin: 0 auto;
+        padding: 21px 30px 15px;
+        text-align: center;
+    }
+}
+
+@media (max-width: 768px) {
+    .wrapper {
+        .container {
+            padding-bottom: 21px;
+        }
+    }
+}

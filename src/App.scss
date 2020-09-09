@@ -1,0 +1,98 @@
+@font-face {
+    font-family: "OpenSans";
+    src: url "./fonts/Open_Sans/OpenSans-Regular.ttf";
+    // src: url("../fonts/HelveticaNeueCyr-Roman/HNC-Roman.eot");
+    // src: local("☺"), url("../fonts/HelveticaNeueCyr-Roman/HNC-Roman.woff") format("woff"), url("../fonts/HelveticaNeueCyr-Roman/HNC-Roman.ttf") format("truetype"), url("../fonts/HelveticaNeueCyr-Roman/HNC-Romann.svg") format("svg");
+    font-weight: 400;
+    font-style: normal;
+}
+
+html, body,
+button {
+    font-family: "OpenSans", sans-serif;
+}
+
+h1,
+h2,
+p,
+span {
+    cursor: default;
+}
+
+h1 {
+    margin: 0;
+
+    font-weight: 400;
+    font-size: 50px;
+    line-height: 54px;
+}
+@media (max-width: 768px) {
+    h1 {
+        font-size: 40px;
+        line-height: 44px;
+    }
+}
+@media (max-width: 414px) {
+    h1 {
+        font-size: 30px;
+        line-height: 34px;
+    }
+}
+
+h2 {
+    margin: 0;
+    
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 29px;
+}
+
+p,
+label {
+    margin: 0;
+    
+    font-size: 16px;
+    line-height: 24px;
+}
+
+span {
+    font-size: 14px;
+    line-height: 22px;
+}
+
+ul {
+    padding: 0;
+    margin: 0;
+}
+
+li {
+    list-style-type: none;
+}
+
+a {
+    text-decoration: none;
+    color: #000;
+}
+
+button {
+    padding: 0;
+    border: none;
+    outline: none;
+    cursor: pointer;
+
+    &:disabled {
+        cursor: default;
+    }
+}
+
+label {
+    cursor: pointer;
+}
+
+input {
+    padding: 0;
+
+    &[type="file"] {
+        cursor: pointer;
+    }
+}

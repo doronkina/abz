@@ -1,0 +1,26 @@
+.users {
+    margin: 0 50px 40px;
+
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.hideBtn {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .users {
+        margin: 0 10px 40px;
+    }
+}
+
+@media (max-width: 414px) {
+    .users {
+        width: fit-content;
+        margin: 0 auto 40px;
+
+        flex-direction: column;
+        align-items: center;
+    }
+}
